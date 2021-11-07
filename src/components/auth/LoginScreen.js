@@ -1,19 +1,23 @@
 import React from 'react';
 import './login.css';
 import { useForm } from '../../hooks/useForm';
+import { useDispatch } from 'react-redux';
+import { startLogin } from '../../actions/auth';
+
 
 export const LoginScreen = () => {
 
+       const dispatch = useDispatch();
+
        const [ formLoginValues, handleLoginInputChange ] = useForm({
-               lEmail: 'fernando@gmail.com',
-               lPassword: '123456'
+               lEmail: 'admin@conexa.com',
+               lPassword: 'randomPass77'
        });       
        const { lEmail, lPassword } = formLoginValues;
 
        const handleLogin = ( e ) => {
               e.preventDefault();
-              console.log(formLoginValues)
-              //dispatch( startLogin( lEmail, lPassword ) );
+              dispatch( startLogin( lEmail, lPassword ) );
     }
 
     return (       
