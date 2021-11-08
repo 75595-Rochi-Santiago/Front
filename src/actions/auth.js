@@ -3,6 +3,7 @@ import { types } from '../types/types';
 import Swal from 'sweetalert2';
 
 export const startLogin = (mail,password)=>{
+
        return async(dispatch)=>{
 
               const resp=await fetchSinToken('auth/login',{mail,password},'POST')
@@ -34,8 +35,8 @@ export const startChecking = () => {
             localStorage.setItem('token-init-date', new Date().getTime() );
 
             dispatch( login({
-                uid: body.uid,
-                name: body.name
+                uid:body.uid,
+                name:body.name
             }) )
         } else {
             dispatch( checkingFinish() );

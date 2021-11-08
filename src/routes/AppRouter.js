@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
+  Route,
   Redirect
 } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,12 +32,7 @@ export const AppRouter = () => {
                      <div>
                    <Switch>
 
-                            <PublicRoute 
-                                   exact 
-                                   path="/login" 
-                                   component={LoginScreen}
-                                   isAuthenticated={ !!uid}
-                                   />
+                            <Route exact path="/login" component={LoginScreen}/>
 
                             <PrivateRoute 
                                    exact 
