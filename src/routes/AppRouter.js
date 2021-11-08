@@ -10,7 +10,6 @@ import { startChecking } from '../actions/auth';
 import { LoginScreen } from '../components/auth/LoginScreen';
 import { PhotosScreen } from '../components/photos/PhotosScreen';
 import { PhrasesScreen } from '../components/phrases/PhrasesScreen';
-import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 export const AppRouter = () => {
