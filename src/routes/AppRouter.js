@@ -25,11 +25,6 @@ export const AppRouter = () => {
        if ( checking ) {
            return (<h5>Wait...</h5>);
        }
-       console.log(checking,uid)
-       console.log(!!uid)
-       const bool=(!!uid)
-       console.log(bool)
-       
 
        return (
               <Router>
@@ -40,21 +35,21 @@ export const AppRouter = () => {
                                    exact 
                                    path="/login" 
                                    component={LoginScreen}
-                                   isAutenticated={ bool}
+                                   isAuthenticated={ !!uid}
                                    />
 
                             <PrivateRoute 
                                    exact 
                                    path="/phrases" 
                                    component={PhrasesScreen}
-                                   isAutenticated={bool}
+                                   isAuthenticated={!!uid}
                                    />
 
                             <PrivateRoute 
                                    exact 
                                    path="/photos" 
                                    component={PhotosScreen}
-                                   isAutenticated={bool}
+                                   isAuthenticated={!!uid}
                             />
 
 
