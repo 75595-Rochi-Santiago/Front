@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { startChecking } from '../actions/auth';
 import { LoginScreen } from '../components/auth/LoginScreen';
 import { PhotosScreen } from '../components/photos/PhotosScreen';
+import { HomeScreen } from '../components/home/Home';
 import { PhrasesScreen } from '../components/phrases/PhrasesScreen';
 import { PrivateRoute } from './PrivateRoute';
 
@@ -46,9 +47,16 @@ export const AppRouter = () => {
                                    component={PhotosScreen}
                                    isAuthenticated={!!uid}
                             />
+       
+                            <PrivateRoute 
+                                   exact 
+                                   path="/home" 
+                                   component={HomeScreen}
+                                   isAuthenticated={!!uid}
+                            />
 
 
-                            <Redirect to="/login"/>
+                            <Redirect to="/home"/>
                    </Switch>
                  </div>
                </Router>

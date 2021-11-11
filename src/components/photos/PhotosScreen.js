@@ -15,14 +15,12 @@ export const PhotosScreen=()=>{
        const [images, setImages] = useState({})
 
        const handleAdd=()=>{
-              console.log('images.next',images.next)
               getPhotos(images.next)
               if(counter>=0){
                      setCounter(counter+10)
               }
        }
        const handleSubtract = () =>{
-              console.log('images.previous',images.previous)
               getPhotos(images.previous)
               if(counter>=10){
                      setCounter( counter - 10)
@@ -35,20 +33,25 @@ export const PhotosScreen=()=>{
               setImages(data)
        }
 
-       console.log('aaaa',images)
-       console.log(isObjEmpty({images}))
-       if(!isObjEmpty({images})){
+       if(!isObjEmpty(images)){
 
        
        return(
               <div>
                      <Navbar/>
-                     <button onClick={ handleSubtract }>Previous</button>
-                     <button onClick={ handleAdd }>Next</button>
+                     <div className="prevnext">
+                     <button className="btnSlidePage" onClick={ handleSubtract }>Previous</button>
+                     <button className="btnSlidePage" onClick={ handleAdd }>Next</button>
+                     </div>
                      <Gallery data={images}/>
+                     <div className="prevnext">
+                     <button className="btnSlidePage" onClick={ handleSubtract }>Previous</button>
+                     <button className="btnSlidePage" onClick={ handleAdd }>Next</button>
+                     </div>
               </div>
        )
        }else{
+              return(
                      <div>
                             <Navbar/>
                      <div class="loader">
@@ -57,6 +60,7 @@ export const PhotosScreen=()=>{
                        <div class="inner three"></div>
                      </div>
                      </div>
+              )
        }
 }
 

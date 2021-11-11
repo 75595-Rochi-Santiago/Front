@@ -7,9 +7,9 @@ export const Navbar = () => {
             
             <Link 
                 className="navbar-brand" 
-                to="/"
+                to="/home"
             >
-                Asociaciones
+                CONEXA CHALLENGE
             </Link>
 
             <div className="navbar-collapse">

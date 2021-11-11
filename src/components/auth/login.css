@@ -214,4 +214,19 @@ body {
   }
 }
 
+.prevnext{
+       text-align:center
+       
+}
 
+.btnSlidePage{
+       background-color: #4CAF50; /* Green */
+       border: 2px solid #000000;
+       color: black;
+       padding: 15px 32px;
+       text-align: center;
+       text-decoration:dashed;
+       display: inline-block;
+       font-size: 17px;
+       width: 250px;
+}
