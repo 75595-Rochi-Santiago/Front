@@ -1,3 +1,15 @@
+### RUN LOCAL ###
+
+npm run start
+
+
+### ROUTES ###
+
+http://localhost:3000/login
+http://localhost:3000/photos
+http://localhost:3000/phrases
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
