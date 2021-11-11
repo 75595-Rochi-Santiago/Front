@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 
-function isObjEmpty(obj) {
-  return Object.keys(obj).length === 0;
-}
-
 export const Gallery=({data})=>{
        console.log('a',isObjEmpty(data))
        console.log(data)
@@ -76,11 +72,17 @@ export const Gallery=({data})=>{
                      )
        }else{
               return(
-                      <div>
-                             <h1>Error</h1>
-                      </div>                     
+                     <div class="loader">
+                       <div class="inner one"></div>
+                       <div class="inner two"></div>
+                       <div class="inner three"></div>
+                     </div>              
               )
        }
+}
+
+function isObjEmpty(obj) {
+  return Object.keys(obj).length === 0;
 }
 
 

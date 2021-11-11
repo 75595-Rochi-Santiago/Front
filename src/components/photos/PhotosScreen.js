@@ -35,14 +35,32 @@ export const PhotosScreen=()=>{
               setImages(data)
        }
 
+       console.log('aaaa',images)
+       console.log(isObjEmpty({images}))
+       if(!isObjEmpty({images})){
 
+       
        return(
               <div>
                      <Navbar/>
                      <button onClick={ handleSubtract }>Previous</button>
                      <button onClick={ handleAdd }>Next</button>
-                      <h2> { counter } </h2>
                      <Gallery data={images}/>
               </div>
        )
+       }else{
+                     <div>
+                            <Navbar/>
+                     <div class="loader">
+                       <div class="inner one"></div>
+                       <div class="inner two"></div>
+                       <div class="inner three"></div>
+                     </div>
+                     </div>
+       }
+}
+
+
+function isObjEmpty(obj) {
+  return Object.keys(obj).length === 0;
 }
