@@ -1,7 +1,17 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import {useDispatch} from 'react-redux'          
+import { startLogout } from '../../actions/auth';       
 
 export const Navbar = () => {
+
+       const dispatch = useDispatch()
+
+       const handleLogout=()=>{
+              dispatch(startLogout())
+
+       }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             
@@ -38,14 +48,13 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    <NavLink 
-                        activeClassName="active"
-                        className="nav-item nav-link" 
-                        exact
-                        to="/login"
-                    >
-                        Logout
-                    </NavLink>
+            <button 
+                className="btn btn-outline-danger"
+                onClick={ handleLogout }
+            >
+                <i className="fas fa-sign-out-alt"></i>
+                <span> Salir</span>
+            </button>
                 </ul>
             </div>
         </nav>

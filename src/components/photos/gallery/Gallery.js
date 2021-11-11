@@ -27,9 +27,6 @@ export const Gallery=({data})=>{
                                           </div>)
                             })
                      }
-       
-                      
-
                   </div>
               </body>
               </html>

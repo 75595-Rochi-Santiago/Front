@@ -12,6 +12,8 @@ import { PhotosScreen } from '../components/photos/PhotosScreen';
 import { HomeScreen } from '../components/home/Home';
 import { PhrasesScreen } from '../components/phrases/PhrasesScreen';
 import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
+
 
 export const AppRouter = () => {
 
@@ -26,13 +28,19 @@ export const AppRouter = () => {
        if ( checking ) {
            return (<h5>Wait...</h5>);
        }
+       console.log(!!uid)
 
        return (
               <Router>
                      <div>
                    <Switch>
 
-                            <Route exact path="/login" component={LoginScreen}/>
+                            <PublicRoute
+                                exact 
+                                path="/login" 
+                                component={ LoginScreen }
+                                isAuthenticated={ !!uid }
+                            />
 
                             <PrivateRoute 
                                    exact 
