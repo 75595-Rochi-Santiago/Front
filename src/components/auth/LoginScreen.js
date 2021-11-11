@@ -24,7 +24,7 @@ export const LoginScreen = () => {
         <div className="container login-container">
             <div className="row">
                 <div className="col-md-12 login-form-1">
-                    <h3>Ingreso</h3>
+                    <h3>Sign In</h3>
                     <form onSubmit={handleLogin}>
                         <div className="form-group">
                             <input 
